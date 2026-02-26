@@ -1,0 +1,244 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-apply-a-premium-warm-color-visual-theme-throughout-the-app-using-saffron-f28c28-maroon-800000-and-gold-ffd700-as-primary-brand-colors-use-rich-dark-backgrounds-for-contrast-elegant-serif-or-semi-serif-typography-for-headings-and-subtle-texture-or-pattern-accents-inspired-by-indian-motifs-ensure-consistent-spacing-smooth-transitions-and-a-clean-layout-that-feels-premium-and-easy-to-navigate",
+      "featureTitle": "Apply a premium warm-color visual theme throughout the app using saffron (#F28C28), maroon (#800000), and gold (#FFD700) as primary brand colors. Use rich dark backgrounds for contrast, elegant serif or semi-serif typography for headings, and subtle texture or pattern accents inspired by Indian motifs. Ensure consistent spacing, smooth transitions, and a clean layout that feels premium and easy to navigate.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-splash-screen-as-the-initial-landing-view-that-displays-the-restaurant-logo-image-the-restaurant-name-the-swad-restaurant-and-the-tagline-experience-the-true-taste-of-swad-the-screen-should-auto-dismiss-after-2-5-seconds-and-navigate-to-the-home-screen-with-a-fade-out-animation",
+      "featureTitle": "Create a Splash Screen as the initial landing view that displays the restaurant logo image, the restaurant name 'The Swad Restaurant', and the tagline 'Experience the True Taste of Swad'. The screen should auto-dismiss after ~2.5 seconds and navigate to the Home screen with a fade-out animation.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/SplashScreen.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-home-screen-that-displays-1-a-hero-banner-section-with-a-featured-dish-image-and-a-welcome-message-2-a-today-s-special-special-offers-horizontal-scroll-section-with-dish-cards-3-three-prominent-quick-action-buttons-order-now-book-table-and-view-menu-each-navigating-to-their-respective-sections",
+      "featureTitle": "Build a Home screen that displays: (1) a hero banner section with a featured dish image and a welcome message, (2) a 'Today's Special / Special Offers' horizontal scroll section with dish cards, (3) three prominent quick-action buttons: 'Order Now', 'Book Table', and 'View Menu', each navigating to their respective sections.",
+      "files": [
+        "frontend/src/pages/Home.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-menu-screen-with-tab-based-category-navigation-starters-main-course-breads-desserts-beverages-and-a-veg-non-veg-toggle-filter-each-menu-item-card-must-display-the-dish-image-name-description-price-a-veg-non-veg-indicator-dot-green-red-and-an-add-to-cart-button-with-quantity-controls",
+      "featureTitle": "Build a Menu screen with tab-based category navigation (Starters, Main Course, Breads, Desserts, Beverages) and a Veg / Non-Veg toggle filter. Each menu item card must display the dish image, name, description, price, a veg/non-veg indicator dot (green/red), and an 'Add to Cart' button with quantity controls (+ / -).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DishCard.tsx",
+        "frontend/src/context/CartContext.tsx",
+        "frontend/src/pages/Menu.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-persistent-shopping-cart-stored-in-frontend-react-state-local-context-the-cart-screen-must-display-all-added-items-with-names-quantities-prices-and-a-subtotal-users-must-be-able-to-adjust-item-quantities-remove-items-enter-a-coupon-code-validated-against-backend-and-see-the-final-total-provide-placeholder-payment-method-selection-upi-card-and-cash-on-delivery-on-order-confirmation-save-the-order-to-the-backend",
+      "featureTitle": "Implement a persistent shopping cart (stored in frontend React state / local context). The Cart screen must display all added items with names, quantities, prices, and a subtotal. Users must be able to: adjust item quantities, remove items, enter a coupon code (validated against backend), and see the final total. Provide placeholder payment method selection: UPI, Card, and Cash on Delivery. On order confirmation, save the order to the backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Cart.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-table-reservation-screen-with-a-booking-form-containing-fields-name-phone-number-date-time-and-number-of-guests-on-submission-save-the-reservation-to-the-backend-and-show-a-confirmation-message-display-existing-reservations-in-the-user-s-account-section",
+      "featureTitle": "Build a Table Reservation screen with a booking form containing fields: Name, Phone Number, Date, Time, and Number of Guests. On submission, save the reservation to the backend and show a confirmation message. Display existing reservations in the user's account section.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/BookTable.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-user-account-functionality-using-internet-identity-for-authentication-after-login-show-the-user-s-profile-page-with-order-history-list-of-past-orders-with-status-saved-delivery-addresses-add-remove-and-table-reservation-history-guest-users-can-browse-and-add-to-cart-but-must-log-in-before-placing-an-order",
+      "featureTitle": "Implement user account functionality using Internet Identity for authentication. After login, show the user's profile page with: order history (list of past orders with status), saved delivery addresses (add/remove), and table reservation history. Guest users can browse and add to cart but must log in before placing an order.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/LoginButton.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/pages/Cart.tsx",
+        "frontend/src/pages/Profile.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-reviews-ratings-screen-where-authenticated-users-can-submit-a-star-rating-1-5-and-a-text-review-for-their-dining-ordering-experience-display-all-reviews-in-a-list-with-reviewer-name-or-anonymous-rating-stars-review-text-and-date-store-reviews-in-the-backend",
+      "featureTitle": "Build a Reviews & Ratings screen where authenticated users can submit a star rating (1–5) and a text review for their dining/ordering experience. Display all reviews in a list with reviewer name (or anonymous), rating stars, review text, and date. Store reviews in the backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/StarRating.tsx",
+        "frontend/src/pages/Reviews.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-contact-location-page-that-displays-the-restaurant-s-address-opening-hours-e-g-mon-sun-11am-11pm-a-static-embedded-google-maps-iframe-for-the-restaurant-location-a-call-us-button-tel-link-a-whatsapp-button-wa-me-link-and-an-email-address",
+      "featureTitle": "Build a Contact & Location page that displays: the restaurant's address, opening hours (e.g., Mon–Sun 11am–11pm), a static embedded Google Maps iframe for the restaurant location, a 'Call Us' button (tel: link), a 'WhatsApp' button (wa.me link), and an email address.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Contact.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-admin-panel-page-protected-by-a-hardcoded-admin-principal-check-in-the-backend-the-admin-panel-must-include-three-tabs-1-menu-management-add-edit-and-delete-dish-records-including-uploading-an-image-url-2-order-management-view-all-orders-update-order-status-3-revenue-reports-display-total-orders-count-total-revenue-and-a-simple-list-of-orders-grouped-by-day",
+      "featureTitle": "Build an Admin Panel page (protected by a hardcoded admin principal check in the backend). The admin panel must include three tabs: (1) Menu Management – add, edit, and delete dish records including uploading an image URL; (2) Order Management – view all orders, update order status; (3) Revenue Reports – display total orders count, total revenue, and a simple list of orders grouped by day.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Admin.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-use-custom-images-as-static-assets-for-the-restaurant-logo-used-on-splash-screen-and-nav-a-hero-banner-for-the-home-screen-and-representative-dish-images-for-each-of-the-five-menu-categories",
+      "featureTitle": "Generate and use custom images as static assets for: the restaurant logo (used on splash screen and nav), a hero banner for the Home screen, and representative dish images for each of the five menu categories.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/DishCard.tsx",
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/pages/SplashScreen.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

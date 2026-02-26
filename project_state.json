@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Mobile restaurant app for 'The Swad Restaurant' serving authentic Indian cuisine. Warm color theme (saffron, maroon, gold). Premium, clean, easy-to-navigate design for Android and iOS with smooth animations.",
+  "architectural_notes": [
+    "Warm color palette: saffron, maroon, and gold throughout the UI",
+    "Cross-platform support for Android and iOS with responsive design",
+    "Secure payment integration (UPI, Card, Cash on Delivery)",
+    "Smooth animations and fast loading speed as core UX requirements"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Circular restaurant logo with a decorative Indian mandala border, the letter 'S' in gold on a maroon background, and the words 'The Swad' in gold serif font below (swad-logo.dim_256x256.png)\n- Wide hero banner showing a richly lit spread of authentic Indian dishes on a dark wooden table with warm saffron and gold lighting (hero-banner.dim_1200x480.png)\n- Appetizing image of Indian starters — samosa, tikki, and kebab on a decorative plate with warm lighting (dish-starters.dim_600x400.png)\n- Appetizing image of Indian main course dishes — butter chicken, dal makhani, and paneer tikka masala in copper serving bowls (dish-maincourse.dim_600x400.png)\n- Appetizing image of Indian breads — naan, roti, and paratha arranged on a cloth with a small bowl of butter (dish-breads.dim_600x400.png)\n- Appetizing image of Indian desserts — gulab jamun, kheer, and jalebi arranged on a gold-rimmed plate (dish-desserts.dim_600x400.png)\n- Appetizing image of Indian beverages — mango lassi, masala chai, and rose sharbat in elegant glasses with garnish (dish-beverages.dim_600x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-apply-a-premium-warm-color-visual-theme-throughout-the-app-using-saffron-f28c28-maroon-800000-and-gold-ffd700-as-primary-brand-colors-use-rich-dark-backgrounds-for-contrast-elegant-serif-or-semi-serif-typography-for-headings-and-subtle-texture-or-pattern-accents-inspired-by-indian-motifs-ensure-consistent-spacing-smooth-transitions-and-a-clean-layout-that-feels-premium-and-easy-to-navigate",
+      "title": "Apply a premium warm-color visual theme throughout the app using saffron (#F28C28), maroon (#800000), and gold (#FFD700) as primary brand colors. Use rich dark backgrounds for contrast, elegant serif or semi-serif typography for headings, and subtle texture or pattern accents inspired by Indian motifs. Ensure consistent spacing, smooth transitions, and a clean layout that feels premium and easy to navigate.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-splash-screen-as-the-initial-landing-view-that-displays-the-restaurant-logo-image-the-restaurant-name-the-swad-restaurant-and-the-tagline-experience-the-true-taste-of-swad-the-screen-should-auto-dismiss-after-2-5-seconds-and-navigate-to-the-home-screen-with-a-fade-out-animation",
+      "title": "Create a Splash Screen as the initial landing view that displays the restaurant logo image, the restaurant name 'The Swad Restaurant', and the tagline 'Experience the True Taste of Swad'. The screen should auto-dismiss after ~2.5 seconds and navigate to the Home screen with a fade-out animation.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-home-screen-that-displays-1-a-hero-banner-section-with-a-featured-dish-image-and-a-welcome-message-2-a-today-s-special-special-offers-horizontal-scroll-section-with-dish-cards-3-three-prominent-quick-action-buttons-order-now-book-table-and-view-menu-each-navigating-to-their-respective-sections",
+      "title": "Build a Home screen that displays: (1) a hero banner section with a featured dish image and a welcome message, (2) a 'Today's Special / Special Offers' horizontal scroll section with dish cards, (3) three prominent quick-action buttons: 'Order Now', 'Book Table', and 'View Menu', each navigating to their respective sections.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-menu-screen-with-tab-based-category-navigation-starters-main-course-breads-desserts-beverages-and-a-veg-non-veg-toggle-filter-each-menu-item-card-must-display-the-dish-image-name-description-price-a-veg-non-veg-indicator-dot-green-red-and-an-add-to-cart-button-with-quantity-controls",
+      "title": "Build a Menu screen with tab-based category navigation (Starters, Main Course, Breads, Desserts, Beverages) and a Veg / Non-Veg toggle filter. Each menu item card must display the dish image, name, description, price, a veg/non-veg indicator dot (green/red), and an 'Add to Cart' button with quantity controls (+ / -).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-persistent-shopping-cart-stored-in-frontend-react-state-local-context-the-cart-screen-must-display-all-added-items-with-names-quantities-prices-and-a-subtotal-users-must-be-able-to-adjust-item-quantities-remove-items-enter-a-coupon-code-validated-against-backend-and-see-the-final-total-provide-placeholder-payment-method-selection-upi-card-and-cash-on-delivery-on-order-confirmation-save-the-order-to-the-backend",
+      "title": "Implement a persistent shopping cart (stored in frontend React state / local context). The Cart screen must display all added items with names, quantities, prices, and a subtotal. Users must be able to: adjust item quantities, remove items, enter a coupon code (validated against backend), and see the final total. Provide placeholder payment method selection: UPI, Card, and Cash on Delivery. On order confirmation, save the order to the backend.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-table-reservation-screen-with-a-booking-form-containing-fields-name-phone-number-date-time-and-number-of-guests-on-submission-save-the-reservation-to-the-backend-and-show-a-confirmation-message-display-existing-reservations-in-the-user-s-account-section",
+      "title": "Build a Table Reservation screen with a booking form containing fields: Name, Phone Number, Date, Time, and Number of Guests. On submission, save the reservation to the backend and show a confirmation message. Display existing reservations in the user's account section.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-user-account-functionality-using-internet-identity-for-authentication-after-login-show-the-user-s-profile-page-with-order-history-list-of-past-orders-with-status-saved-delivery-addresses-add-remove-and-table-reservation-history-guest-users-can-browse-and-add-to-cart-but-must-log-in-before-placing-an-order",
+      "title": "Implement user account functionality using Internet Identity for authentication. After login, show the user's profile page with: order history (list of past orders with status), saved delivery addresses (add/remove), and table reservation history. Guest users can browse and add to cart but must log in before placing an order.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-reviews-ratings-screen-where-authenticated-users-can-submit-a-star-rating-1-5-and-a-text-review-for-their-dining-ordering-experience-display-all-reviews-in-a-list-with-reviewer-name-or-anonymous-rating-stars-review-text-and-date-store-reviews-in-the-backend",
+      "title": "Build a Reviews & Ratings screen where authenticated users can submit a star rating (1–5) and a text review for their dining/ordering experience. Display all reviews in a list with reviewer name (or anonymous), rating stars, review text, and date. Store reviews in the backend.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-contact-location-page-that-displays-the-restaurant-s-address-opening-hours-e-g-mon-sun-11am-11pm-a-static-embedded-google-maps-iframe-for-the-restaurant-location-a-call-us-button-tel-link-a-whatsapp-button-wa-me-link-and-an-email-address",
+      "title": "Build a Contact & Location page that displays: the restaurant's address, opening hours (e.g., Mon–Sun 11am–11pm), a static embedded Google Maps iframe for the restaurant location, a 'Call Us' button (tel: link), a 'WhatsApp' button (wa.me link), and an email address.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-admin-panel-page-protected-by-a-hardcoded-admin-principal-check-in-the-backend-the-admin-panel-must-include-three-tabs-1-menu-management-add-edit-and-delete-dish-records-including-uploading-an-image-url-2-order-management-view-all-orders-update-order-status-3-revenue-reports-display-total-orders-count-total-revenue-and-a-simple-list-of-orders-grouped-by-day",
+      "title": "Build an Admin Panel page (protected by a hardcoded admin principal check in the backend). The admin panel must include three tabs: (1) Menu Management – add, edit, and delete dish records including uploading an image URL; (2) Order Management – view all orders, update order status; (3) Revenue Reports – display total orders count, total revenue, and a simple list of orders grouped by day.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-use-custom-images-as-static-assets-for-the-restaurant-logo-used-on-splash-screen-and-nav-a-hero-banner-for-the-home-screen-and-representative-dish-images-for-each-of-the-five-menu-categories",
+      "title": "Generate and use custom images as static assets for: the restaurant logo (used on splash screen and nav), a hero banner for the Home screen, and representative dish images for each of the five menu categories.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Splash screen with logo and tagline 'Experience the True Taste of Swad'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Home screen with featured dishes, special offers/today's special, and quick buttons (Order Now, Book Table, View Menu)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Menu section with categories (Starters, Main Course, Breads, Desserts, Beverages), Veg/Non-Veg filter, item details, and Add to Cart",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Online ordering system with shopping cart, quantity selection, coupon codes, and multiple payment options (UPI, Card, Cash on Delivery)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Table reservation with booking form (Name, Phone, Date, Time, Number of Guests)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "User account section with Login/Sign Up, order history, and saved addresses",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Push notifications for special discounts, festival offers, and order status updates",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Reviews & ratings system for customer feedback",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Contact & location page with Google Maps integration, Call & WhatsApp button, and opening hours",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Admin panel to update menu, manage orders, and view revenue reports",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Store featured dishes and today's specials in the backend. Each dish record must include: name, description, price, category (Starters, Main Course, Breads, Desserts, Beverages), image URL, veg/non-veg flag, and availability status. Expose query functions to retrieve all dishes, filter by category, and filter by veg/non-veg.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Store orders and coupon codes in the backend. An order record must include: items (name, quantity, price), total amount, payment method, user reference, order status (Pending, Confirmed, Preparing, Delivered), and timestamp. Coupon records must include a code string and discount percentage. Expose update functions for order status.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "The Swad Restaurant",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

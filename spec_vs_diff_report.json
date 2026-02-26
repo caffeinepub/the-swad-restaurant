@@ -1,0 +1,117 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T04:33:06.559Z",
+  "summary": "The diff implements a comprehensive full-stack restaurant application with most requirements addressed. The backend (backend/main.mo) contains a single Motoko actor with all required data types and functions. The frontend includes all major screens. However, several specific acceptance criteria have gaps: the saved delivery addresses feature in Profile is simplified to a single address field rather than add/remove multiple addresses; the Home screen Today's Special section uses static promo cards rather than backend-driven dish cards in a horizontal scroll; the Admin revenue report grouping by day is unconfirmed; and image assets are referenced in code but their actual file presence is unconfirmed due to omitted files.",
+  "missing_requirements": [
+    {
+      "id": "REQ-9",
+      "requirement": "User can add and remove saved delivery addresses (multiple addresses)",
+      "reason": "The Profile page and ProfileSetupModal use a single 'address' string field in UserProfile. There is no multi-address add/remove functionality — just one address that can be edited. REQ-9 requires users to add and remove saved delivery addresses as a list.",
+      "evidence": [
+        "frontend/src/pages/Profile.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Revenue Reports tab must display a list of orders grouped by day",
+      "reason": "The Admin.tsx file is truncated and no grouping-by-day logic is visible. REQ-12 requires orders grouped by day in the revenue report tab.",
+      "evidence": [
+        "frontend/src/pages/Admin.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "Today's Special / Special Offers horizontal scroll section with actual dish cards",
+      "reason": "The Home screen shows a static SPECIAL_OFFERS array with hardcoded promotional text tiles rather than a horizontal-scroll section of dish image cards driven by backend dish data.",
+      "evidence": [
+        "frontend/src/pages/Home.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Sample coupon codes seeded in backend (e.g., SWAD10 for 10% off)",
+      "reason": "The backend/main.mo is truncated and no coupon seeding logic is visible in the shown portion of the diff.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Dishes are seeded with sample data for all five categories in the backend",
+      "reason": "The backend/main.mo is truncated and no dish seeding or initialization logic for sample data is visible in the shown content.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Custom images as static assets must be generated and present for logo, hero banner, and all five dish category images",
+      "reason": "The diff notes 9 files omitted due to limits. The image assets referenced in code cannot be confirmed as actually added files.",
+      "evidence": [
+        "frontend/src/components/DishCard.tsx",
+        "frontend/src/pages/Home.tsx",
+        "frontend/src/components/Navbar.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "ProfileSetupModal — a modal dialog that appears after first login to collect user name and address",
+      "reason": "The build request does not specify a forced profile setup modal on first login. REQ-9 describes a profile page but not a modal-based onboarding flow.",
+      "evidence": [
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "Footer component with quick links, contact info, and branding",
+      "reason": "The build request does not specify a footer component. A full footer was added with navigation links and contact details.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "Coupon management section in the Admin panel with useAddCoupon hook",
+      "reason": "REQ-12 specifies three admin tabs: Menu Management, Order Management, and Revenue Reports. A coupon management feature in the admin panel was not requested.",
+      "evidence": [
+        "frontend/src/pages/Admin.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/DishCard.tsx",
+    "frontend/src/components/LoginButton.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/StarRating.tsx",
+    "frontend/src/context/CartContext.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/Admin.tsx",
+    "frontend/src/pages/BookTable.tsx",
+    "frontend/src/pages/Cart.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Menu.tsx",
+    "frontend/src/pages/Profile.tsx",
+    "frontend/src/pages/Reviews.tsx",
+    "frontend/src/pages/SplashScreen.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

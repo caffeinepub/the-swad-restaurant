@@ -1,0 +1,5 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that sets up TanStack Router with all routes (splash, home, menu, cart, book-table, profile, reviews, contact, admin), wraps the app with CartProvider and ThemeProvider, renders the Navbar layout with ProfileSetupModal, and includes a branded footer with attribution.",
+  "frontend/src/pages/Admin.tsx": "Complete admin panel page with four tabs — Menu Management (add/edit/delete dishes), Order Management (view all orders and update status), Coupons (add coupon codes), and Revenue Reports (stats cards and orders grouped by date) — protected by admin role check.",
+  "frontend/src/index.css": "Global stylesheet defining the OKLCH color system tokens for light/dark modes, Google Fonts imports, base typography, and utility classes for the restaurant brand theme — all `@apply` directives now use only standard Tailwind utilities without opacity modifiers on custom static colors."
+}

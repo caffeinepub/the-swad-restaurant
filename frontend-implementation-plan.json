@@ -1,0 +1,299 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "The Swad Restaurant – Frontend Implementation Plan",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Apply premium warm-color visual theme with saffron, maroon, and gold brand colors throughout the app",
+      "acceptanceCriteria": [
+        "Saffron, maroon, and gold are used as the dominant palette across all screens",
+        "Typography is elegant and consistent across headings and body text",
+        "All transitions and page changes have smooth animations",
+        "Layout is responsive and usable on both mobile and desktop viewports"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define CSS custom properties for the brand palette (--color-saffron: #F28C28, --color-maroon: #800000, --color-gold: #FFD700), set dark background colors, configure elegant serif/semi-serif typography for headings, and add smooth transition utilities. Include subtle pattern/texture accents inspired by Indian motifs."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend the Tailwind theme to include saffron, maroon, and gold as custom colors accessible via utility classes (e.g., bg-saffron, text-maroon, border-gold). Configure font families for elegant serif headings and ensure smooth transition defaults."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create a Splash Screen that displays the restaurant logo, name, and tagline, auto-dismissing after ~2.5 seconds",
+      "acceptanceCriteria": [
+        "Splash screen is shown on first load",
+        "Logo, restaurant name, and tagline are all visible",
+        "Screen fades out after ~2.5 seconds and transitions to Home"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SplashScreen.tsx",
+          "operation": "create",
+          "description": "Create the SplashScreen component that renders the restaurant logo image from frontend/public/assets/generated/swad-logo.dim_256x256.png, the restaurant name 'The Swad Restaurant', and the tagline 'Experience the True Taste of Swad'. Implement a useEffect that triggers navigation to /home after 2500ms with a fade-out animation."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update the router configuration to set SplashScreen as the initial route ('/'), ensuring it is the first view users see on app load. Add a route for '/home' that renders the Home page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build a Home screen with hero banner, Today's Special section, and quick-action buttons",
+      "acceptanceCriteria": [
+        "Hero banner with featured dish image is visible",
+        "Today's Special section renders scrollable dish cards",
+        "Order Now, Book Table, and View Menu buttons navigate to the correct pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "create",
+          "description": "Create the Home page component. Render a hero banner section using the generated image frontend/public/assets/generated/hero-banner.dim_1200x480.png with a welcome message overlay. Add a 'Today's Special / Special Offers' horizontal scrollable section that fetches dishes from the backend (getAllDishes) and displays dish cards for items marked as specials. Include three prominent buttons: 'Order Now' (navigates to /menu), 'Book Table' (navigates to /book-table), and 'View Menu' (navigates to /menu)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build a Menu screen with category tabs, Veg/Non-Veg filter, and Add to Cart functionality",
+      "acceptanceCriteria": [
+        "All five category tabs are visible and switch the displayed items",
+        "Veg/Non-Veg filter correctly hides/shows items",
+        "Each card shows image, name, description, price, and dietary indicator",
+        "Add to Cart button adds the item to the cart and shows quantity controls"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Menu.tsx",
+          "operation": "create",
+          "description": "Create the Menu page with tab navigation for the five categories (Starters, Main Course, Breads, Desserts, Beverages). Add a Veg/Non-Veg toggle filter. Fetch dishes from the backend using getAllDishes, getDishesByCategory, and getVegDishes. Render dish cards with the dish image, name, description, price, and a veg/non-veg indicator dot (green/red). Each card includes an 'Add to Cart' button that updates cart state and shows quantity controls (+/-)."
+        },
+        {
+          "path": "frontend/src/components/DishCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable DishCard component that accepts a Dish object and renders the dish image, name, description, price, dietary indicator, and an 'Add to Cart' button with quantity controls. The component should call a cart context function to add/update items."
+        },
+        {
+          "path": "frontend/src/context/CartContext.tsx",
+          "operation": "create",
+          "description": "Create a CartContext using React Context API to manage cart state (items, quantities, totals). Provide functions: addItem, removeItem, updateQuantity, clearCart, and applyDiscount. Persist cart state in memory for the session."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the app with CartProvider from CartContext to enable cart state across all components. Add a route for '/menu' that renders the Menu page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement a persistent shopping cart with quantity controls, coupon validation, payment method selection, and order placement",
+      "acceptanceCriteria": [
+        "Cart persists across navigation within the session",
+        "Quantity can be increased or decreased per item",
+        "Coupon code field is present and validates against backend coupons",
+        "Payment method selector shows UPI, Card, and Cash on Delivery options",
+        "Placing order saves order record to backend and clears cart"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "create",
+          "description": "Create the Cart page that displays all items in the cart with names, quantities, and prices. Show a subtotal and provide controls to adjust quantities or remove items. Include a coupon code input field that calls the backend validateCoupon method and applies the discount to the total. Add a payment method selector with options: UPI, Card, and Cash on Delivery. Include a 'Place Order' button that calls the backend placeOrder method with cart items, total, and payment method, then clears the cart and shows a confirmation message."
+        },
+        {
+          "path": "frontend/src/hooks/useCart.ts",
+          "operation": "create",
+          "description": "Create a custom hook useCart that provides access to the CartContext. Export functions to get cart items, total, item count, and cart operations (add, remove, update, clear)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for '/cart' that renders the Cart page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build a Table Reservation screen with booking form and confirmation",
+      "acceptanceCriteria": [
+        "Form has all five required fields with validation",
+        "Submitted reservation is saved to the backend",
+        "Confirmation message is displayed after successful booking",
+        "Reservations are retrievable per user"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/BookTable.tsx",
+          "operation": "create",
+          "description": "Create the BookTable page with a reservation form containing fields: Name, Phone Number, Date, Time, and Number of Guests. Implement validation for all fields. On form submission, call the backend makeReservation method. Display a confirmation message upon success. Use the authorization component to ensure the user is authenticated before submitting a reservation."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for '/book-table' that renders the BookTable page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Implement user account functionality with Internet Identity authentication, profile management, order history, saved addresses, and reservation history",
+      "acceptanceCriteria": [
+        "Internet Identity login flow works and returns a principal",
+        "Order history lists past orders with name, date, total, and status",
+        "User can add and remove saved delivery addresses",
+        "Unauthenticated users are prompted to log in before checkout"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Profile.tsx",
+          "operation": "create",
+          "description": "Create the Profile page that displays the user's profile information (name, saved addresses), order history, and table reservation history. Use the authorization component to ensure the user is authenticated. Fetch data using getCallerUserProfile, getUserOrders (with caller principal), and getUserReservations (with caller principal). Provide UI to add/remove saved addresses (updating the profile via saveCallerUserProfile). Display past orders with name, date, total, and status. Display reservation history with date, time, and guest count."
+        },
+        {
+          "path": "frontend/src/components/LoginButton.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create a LoginButton component that uses useInternetIdentity hook to handle login/logout. On logout, clear all cached application data using queryClient.clear(). The button text should reflect the authentication state ('Login' or 'Logout')."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create a ProfileSetupModal component that prompts the user for their name on first login if getCallerUserProfile returns null. On submission, call saveCallerUserProfile to save the user's profile. Follow the authorization component's guidance to prevent modal flash by checking actorFetching and isFetched states."
+        },
+        {
+          "path": "frontend/src/pages/Cart.tsx",
+          "operation": "modify",
+          "description": "Add a guard to the 'Place Order' flow that checks if the user is authenticated (using useInternetIdentity). If not authenticated, display a prompt to log in before proceeding with checkout."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the app with authentication context providers as required by the authorization component. Add a route for '/profile' that renders the Profile page. Integrate the ProfileSetupModal to show on first login when the user profile is null."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build a Reviews & Ratings screen where authenticated users can submit and view reviews",
+      "acceptanceCriteria": [
+        "Authenticated users can submit a rating and review",
+        "Reviews are saved to the backend with timestamp",
+        "All reviews are displayed in a scrollable list",
+        "Star rating visually renders as filled/empty stars"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Reviews.tsx",
+          "operation": "create",
+          "description": "Create the Reviews page with a review submission form (star rating 1–5 and text comment) for authenticated users. On submission, call the backend submitReview method. Below the form, display all reviews fetched via getAllReviews in a scrollable list. Each review should show the reviewer's name (fetch via getUserProfile if available, otherwise show 'Anonymous'), star rating (rendered as filled/empty stars), review text, and date. Use the authorization component to ensure only authenticated users can submit reviews."
+        },
+        {
+          "path": "frontend/src/components/StarRating.tsx",
+          "operation": "create",
+          "description": "Create a reusable StarRating component that renders star icons as filled or empty based on a rating value (1–5). Support both display mode (read-only) and interactive mode (for user input)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for '/reviews' that renders the Reviews page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Build a Contact & Location page with restaurant details, map, and contact buttons",
+      "acceptanceCriteria": [
+        "Address and opening hours are displayed",
+        "A Google Maps embed iframe shows the restaurant location",
+        "Call button opens the phone dialer with the restaurant number",
+        "WhatsApp button opens a WhatsApp chat link",
+        "Page is accessible from the main navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "create",
+          "description": "Create the Contact page that displays the restaurant's address, opening hours (e.g., Mon–Sun 11am–11pm), a static embedded Google Maps iframe for the restaurant location, a 'Call Us' button (tel: link), a 'WhatsApp' button (wa.me link), and an email address. Use placeholder values for phone number, WhatsApp number, and map coordinates."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for '/contact' that renders the Contact page. Ensure the Contact link is included in the main navigation component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Build an Admin Panel with Menu Management, Order Management, and Revenue Reports tabs",
+      "acceptanceCriteria": [
+        "Admin panel is only accessible to the designated admin principal",
+        "Admin can create, edit, and delete menu items",
+        "Admin can view all orders and change their status",
+        "Revenue report tab shows total revenue and order counts",
+        "Non-admin users see an access-denied message"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Admin.tsx",
+          "operation": "create",
+          "description": "Create the Admin page with three tabs: Menu Management, Order Management, and Revenue Reports. Use the authorization component to check if the user is an admin (via isCallerAdmin). If not admin, display an access-denied message. In the Menu Management tab, fetch all dishes (getAllDishes) and provide UI to add (addDish), edit (editDish), and delete (deleteDish) menu items, including uploading an image URL. In the Order Management tab, fetch all orders (getAllOrders) and provide UI to update order status (updateOrderStatus). In the Revenue Reports tab, display total orders count, total revenue, and a list of orders grouped by day."
+        },
+        {
+          "path": "frontend/src/components/AdminGuard.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create an AdminGuard wrapper component that checks if the user is an admin (via isCallerAdmin). If not, render an access-denied screen. If yes, render the children components."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add a route for '/admin' that renders the Admin page wrapped in AdminGuard. Ensure the Admin link is only visible in navigation when the user is an admin."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Wire generated images as static assets for logo, hero banner, and dish categories",
+      "acceptanceCriteria": [
+        "Logo image is rendered on the splash screen and in the top navigation",
+        "Hero banner image is displayed on the Home screen",
+        "Each menu category has at least one representative dish image rendered from static assets"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SplashScreen.tsx",
+          "operation": "modify",
+          "description": "Ensure the SplashScreen component uses the generated logo image from frontend/public/assets/generated/swad-logo.dim_256x256.png as a static asset reference."
+        },
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "create",
+          "description": "Create the Navbar component that displays the restaurant logo from frontend/public/assets/generated/swad-logo.dim_256x256.png and navigation links to Home, Menu, Cart, Book Table, Reviews, Contact, Profile, and Admin (if user is admin). Include the LoginButton component."
+        },
+        {
+          "path": "frontend/src/pages/Home.tsx",
+          "operation": "modify",
+          "description": "Ensure the Home page hero banner section uses the generated hero banner image from frontend/public/assets/generated/hero-banner.dim_1200x480.png as a static asset reference."
+        },
+        {
+          "path": "frontend/src/components/DishCard.tsx",
+          "operation": "modify",
+          "description": "Ensure the DishCard component renders dish images. For categories without backend-stored image URLs, use the generated dish images as fallbacks: frontend/public/assets/generated/dish-starters.dim_600x400.png for Starters, frontend/public/assets/generated/dish-maincourse.dim_600x400.png for Main Course, frontend/public/assets/generated/dish-breads.dim_600x400.png for Breads, frontend/public/assets/generated/dish-desserts.dim_600x400.png for Desserts, and frontend/public/assets/generated/dish-beverages.dim_600x400.png for Beverages."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the Navbar component is rendered at the top of all pages (outside the router outlet or as a layout wrapper)."
+        }
+      ]
+    }
+  ]
+}

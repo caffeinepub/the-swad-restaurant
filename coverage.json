@@ -1,0 +1,316 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T04:33:06.563Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 13,
+    "implemented": 11,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Apply a premium warm-color visual theme throughout the app using saffron (#F28C28), maroon (#800000), and gold (#FFD700) as primary brand colors. Use rich dark backgrounds for contrast, elegant serif or semi-serif typography for headings, and subtle texture or pattern accents inspired by Indian motifs. Ensure consistent spacing, smooth transitions, and a clean layout that feels premium and easy to navigate.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Build a Reviews & Ratings screen where authenticated users can submit a star rating (1–5) and a text review for their dining/ordering experience. Display all reviews in a list with reviewer name (or anonymous), rating stars, review text, and date. Store reviews in the backend.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Reviews.tsx",
+          "frontend/src/components/StarRating.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Reviews.tsx",
+          "frontend/src/components/StarRating.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Build a Contact & Location page that displays: the restaurant's address, opening hours (e.g., Mon–Sun 11am–11pm), a static embedded Google Maps iframe for the restaurant location, a 'Call Us' button (tel: link), a 'WhatsApp' button (wa.me link), and an email address.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Contact.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Build an Admin Panel page (protected by a hardcoded admin principal check in the backend). The admin panel must include three tabs: (1) Menu Management – add, edit, and delete dish records including uploading an image URL; (2) Order Management – view all orders, update order status; (3) Revenue Reports – display total orders count, total revenue, and a simple list of orders grouped by day.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Admin.tsx",
+          "frontend/src/components/AdminGuard.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Admin.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Generate and use custom images as static assets for: the restaurant logo (used on splash screen and nav), a hero banner for the Home screen, and representative dish images for each of the five menu categories.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/SplashScreen.tsx",
+          "frontend/src/components/Navbar.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/components/DishCard.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/SplashScreen.tsx",
+          "frontend/src/components/Navbar.tsx",
+          "frontend/src/pages/Home.tsx",
+          "frontend/src/components/DishCard.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Create a Splash Screen as the initial landing view that displays the restaurant logo image, the restaurant name 'The Swad Restaurant', and the tagline 'Experience the True Taste of Swad'. The screen should auto-dismiss after ~2.5 seconds and navigate to the Home screen with a fade-out animation.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/SplashScreen.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/SplashScreen.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Build a Home screen that displays: (1) a hero banner section with a featured dish image and a welcome message, (2) a 'Today's Special / Special Offers' horizontal scroll section with dish cards, (3) three prominent quick-action buttons: 'Order Now', 'Book Table', and 'View Menu', each navigating to their respective sections.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Home.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Home.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Store featured dishes and today's specials in the backend. Each dish record must include: name, description, price, category (Starters, Main Course, Breads, Desserts, Beverages), image URL, veg/non-veg flag, and availability status. Expose query functions to retrieve all dishes, filter by category, and filter by veg/non-veg.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Build a Menu screen with tab-based category navigation (Starters, Main Course, Breads, Desserts, Beverages) and a Veg / Non-Veg toggle filter. Each menu item card must display the dish image, name, description, price, a veg/non-veg indicator dot (green/red), and an 'Add to Cart' button with quantity controls (+ / -).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Menu.tsx",
+          "frontend/src/components/DishCard.tsx",
+          "frontend/src/context/CartContext.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Menu.tsx",
+          "frontend/src/components/DishCard.tsx",
+          "frontend/src/context/CartContext.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Implement a persistent shopping cart (stored in frontend React state / local context). The Cart screen must display all added items with names, quantities, prices, and a subtotal. Users must be able to: adjust item quantities, remove items, enter a coupon code (validated against backend), and see the final total. Provide placeholder payment method selection: UPI, Card, and Cash on Delivery. On order confirmation, save the order to the backend.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Cart.tsx",
+          "frontend/src/hooks/useCart.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Cart.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Store orders and coupon codes in the backend. An order record must include: items (name, quantity, price), total amount, payment method, user reference, order status (Pending, Confirmed, Preparing, Delivered), and timestamp. Coupon records must include a code string and discount percentage. Expose update functions for order status.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Build a Table Reservation screen with a booking form containing fields: Name, Phone Number, Date, Time, and Number of Guests. On submission, save the reservation to the backend and show a confirmation message. Display existing reservations in the user's account section.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/BookTable.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/BookTable.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Implement user account functionality using Internet Identity for authentication. After login, show the user's profile page with: order history (list of past orders with status), saved delivery addresses (add/remove), and table reservation history. Guest users can browse and add to cart but must log in before placing an order.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Profile.tsx",
+          "frontend/src/components/LoginButton.tsx",
+          "frontend/src/components/ProfileSetupModal.tsx",
+          "frontend/src/pages/Cart.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Profile.tsx",
+          "frontend/src/components/LoginButton.tsx",
+          "frontend/src/components/ProfileSetupModal.tsx",
+          "frontend/src/pages/Cart.tsx",
+          "frontend/src/App.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/dish-beverages.dim_600x400.png",
+    "frontend/public/assets/generated/dish-breads.dim_600x400.png",
+    "frontend/public/assets/generated/dish-desserts.dim_600x400.png",
+    "frontend/public/assets/generated/dish-maincourse.dim_600x400.png",
+    "frontend/public/assets/generated/dish-starters.dim_600x400.png",
+    "frontend/public/assets/generated/hero-banner.dim_1200x480.png",
+    "frontend/public/assets/generated/swad-logo.dim_256x256.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/DishCard.tsx",
+    "frontend/src/components/LoginButton.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/StarRating.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/context/CartContext.tsx",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/Admin.tsx",
+    "frontend/src/pages/BookTable.tsx",
+    "frontend/src/pages/Cart.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/Home.tsx",
+    "frontend/src/pages/Menu.tsx",
+    "frontend/src/pages/Profile.tsx",
+    "frontend/src/pages/Reviews.tsx",
+    "frontend/src/pages/SplashScreen.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
